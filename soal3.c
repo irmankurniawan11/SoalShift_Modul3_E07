@@ -15,17 +15,22 @@ while(1) {
 	scanf("%d",&x);
 	if (x==1) {
 		lohan_st += 10;
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 		if (lohan_st<=0 || lohan_st>100) {
 			KO = 1;break;		
 		}
 	}
 	else if (x==2) {
 		kepiting_st += 10;
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 		if (kepiting_st<=0 || kepiting_st>100) {
 			KO = 1;break;
 		}
 	}
-	else continue;
+	else {
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
+		continue;
+	}
 }
 }
 
