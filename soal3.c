@@ -29,13 +29,21 @@ while(1) {
 
 void *lohan() {
 	while(1) {
-		
+		sleep(10);
+		lohan_st -= 15;
+		if (lohan_st<=0 || lohan_st>100) {
+			KO = 1;break;		
+		}
 	}
 }
 
 void *kepiting() {
 	while(1) {
-		
+		sleep(20);
+		kepiting_st -= 10;
+		if (kepiting_st<=0 || kepiting_st>100) {
+			KO = 1;break;
+		}
 	}
 }
 
