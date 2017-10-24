@@ -7,6 +7,7 @@ int kepiting_st = 100;
 int KO = 0;
 
 void *menu() {
+while(1) {
 	printf("MENU\n1 = BERIMAKAN LOHAN\n2 = BERIMAKAN KEPITING\n");
 	int x;
 	scanf("%d",&x);
@@ -23,6 +24,7 @@ void *menu() {
 		}
 	}
 	else continue;
+}
 }
 
 void *lohan() {
@@ -41,5 +43,9 @@ int main() {
 	pthread_create(&(menu_t),NULL,&menu,NULL);
 	pthread_create(&(menu_t),NULL,&menu,NULL);
 	pthread_create(&(menu_t),NULL,&menu,NULL);
+
+	while(1) {
+		if(KO==1) break;
+	}
 	return 0;
 }
