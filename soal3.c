@@ -2,8 +2,10 @@
 #include <pthread.h>
 
 pthread_t menu_t, lohan_t, kepiting_t;
+
 int lohan_st = 100;
 int kepiting_st = 100;
+
 int KO = 0;
 
 void *menu() {
@@ -49,8 +51,8 @@ void *kepiting() {
 
 int main() {
 	pthread_create(&(menu_t),NULL,&menu,NULL);
-	pthread_create(&(menu_t),NULL,&menu,NULL);
-	pthread_create(&(menu_t),NULL,&menu,NULL);
+	pthread_create(&(lohan_t),NULL,&lohan,NULL);
+	pthread_create(&(kepiting_t),NULL,&kepiting,NULL);
 
 	while(1) {
 		if(KO==1) break;
