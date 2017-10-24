@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 pthread_t menu_t, lohan_t, kepiting_t;
 
@@ -11,12 +12,14 @@ int KO = 0;
 
 void *menu() {
 	while(1) {
+		system("clear");
 		printf("###### MENU ###############\n  1 = BERI MAKAN LOHAN     \n  2 = BERI MAKAN KEPITING  \n###########################\n");
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 		int x;
 		scanf("%d",&x);
 		if (x==1) {
 			lohan_st += 10;
-			printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
+			//printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 			if (lohan_st<=0 || lohan_st>100) {
 				KO = 1;
 				break;		
@@ -24,7 +27,7 @@ void *menu() {
 		}
 		else if (x==2) {
 			kepiting_st += 10;
-			printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
+			//printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 			if (kepiting_st<=0 || kepiting_st>100) {
 				KO = 1;
 				break;
@@ -41,6 +44,9 @@ void *lohan() {
 	while(1) {
 		sleep(10);
 		lohan_st -= 15;
+		system("clear");
+		printf("###### MENU ###############\n  1 = BERI MAKAN LOHAN     \n  2 = BERI MAKAN KEPITING  \n###########################\n");
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 		if (lohan_st<=0 || lohan_st>100) {
 			KO = 1;
 			break;		
@@ -51,6 +57,9 @@ void *lohan() {
 void *kepiting() {
 	while(1) {
 		sleep(20);
+		system("clear");
+		printf("###### MENU ###############\n  1 = BERI MAKAN LOHAN     \n  2 = BERI MAKAN KEPITING  \n###########################\n");
+		printf("Lohan : %d | Kepiting : %d\n",lohan_st,kepiting_st);
 		kepiting_st -= 10;
 		if (kepiting_st<=0 || kepiting_st>100) {
 			KO = 1;
@@ -60,6 +69,7 @@ void *kepiting() {
 }
 
 int main() {
+	system("clear");
 	pthread_create(&(menu_t),NULL,&menu,NULL);
 	pthread_create(&(lohan_t),NULL,&lohan,NULL);
 	pthread_create(&(kepiting_t),NULL,&kepiting,NULL);
