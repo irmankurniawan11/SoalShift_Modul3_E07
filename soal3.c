@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 
 pthread_t menu_t, lohan_t, kepiting_t;
 
@@ -10,7 +11,7 @@ int KO = 0;
 
 void *menu() {
 	while(1) {
-		printf("MENU\n1 = BERIMAKAN LOHAN\n2 = BERIMAKAN KEPITING\n");
+		printf("###### MENU ###############\n  1 = BERI MAKAN LOHAN     \n  2 = BERI MAKAN KEPITING  \n###########################\n");
 		int x;
 		scanf("%d",&x);
 		if (x==1) {
@@ -65,7 +66,7 @@ int main() {
 
 	while(1) {
 		if(KO==1) {
-			printf("GAME BERAKHIR\n");
+			printf("##### GAME BERAKHIR #####\n");
 			break;
 		}
 	}
