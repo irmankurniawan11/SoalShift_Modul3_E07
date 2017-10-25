@@ -98,7 +98,9 @@ void *fungsi1() {
 			if(skor2>=10) {
 				winner=2;break;
 			}
-			//
+			step=1;
+			turn=2;
+			continue;
 		}
 	}
 }
@@ -188,7 +190,9 @@ void *fungsi2() {
 			if(skor2>=10) {
 				winner=2;break;
 			}
-			//
+			step=1;
+			turn=1;
+			continue;
 		}
 	}
 }
