@@ -9,7 +9,7 @@ int nama1[50], nama2[50];
 int turn=1;
 
 void *fungsi1() {
-	int i;
+	int i,j;
 	int step=0;
 	int x;int mine[4];
 	
@@ -17,6 +17,7 @@ void *fungsi1() {
 	while(1) {
 		while(turn!=1) {}
 		if(step==0) {
+			printf("Nama pemain 1 : ");
 			scanf("%s",nama1);
 			step=1;
 			turn=2;
@@ -24,15 +25,28 @@ void *fungsi1() {
 		}
 		if(step==1) {
 			scanf("%d",&x);
+			if(x>4) {
+				getchar();
+				continue;
+			}
 			psmine1:
 			printf("Lubang yang ingin dipasangi ranjau (1-16) :\n");
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
 				mine[i] -= 1;
+				
+				if(mine[i]>16) {
+					getchar();
+					goto psmine1;
+				}
 			}
 			for(i=0;i<x;i++) {
 				for(j=0;j<x;j++) {
-					if(a==f) continue;
+					if(i==j) continue;
+					if(mine[i]==mine[j]) {
+						getchar();
+						goto psmine1;
+					}
 				}
 			}
 			for(i=0;i<x;i++) {
@@ -54,9 +68,11 @@ void *fungsi2() {
 	while(1) {
 		while(turn!=2) {}
 		if(step==0) {
+			printf("Nama pemain 2 : ");
 			scanf("%s",nama2);
 			step=1;
 			turn=1;
+			continue;
 		}
 		if(step==1) {
 			scanf("%d",&x);
