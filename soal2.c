@@ -202,7 +202,16 @@ int main() {
 	pthread_create(&(p2),NULL,&fungsi2,NULL);
 	
 	while(1) {
-		
+		if(winner==1) {
+			printf("P1 Menang\n");
+			printf("Skornya %d\n",skor1);
+			return 0;
+		}
+		if(winner==2) {
+			printf("P2 Menang\n");
+			printf("Skornya %d\n",skor2);
+			return 0;
+		}
 	}
 	
 	return 0;
