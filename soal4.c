@@ -9,3 +9,11 @@ void* faktorial(int angka){
 	total=angka*total;
 	}
 }
+
+int main(int argc,char *argv[]){
+pthread_t tid[argc];
+for(int x=1;x<argc;x++){
+	pthread_create(&(tid[i],NULL,&faktorial,(void*)bil);
+	pthread_join(tid[i],NULL);
+}
+
