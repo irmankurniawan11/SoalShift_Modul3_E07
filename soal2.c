@@ -111,7 +111,7 @@ void *fungsi2() {
 	int x;int mine[4];
 	int gues[4];
 	
-	for(i=0; i<16;i++) mine1[i]=0;
+	for(i=0; i<16;i++) mine2[i]=0;
 	while(1) {
 		while(turn!=2) {}
 		if(step==0) {
@@ -135,7 +135,7 @@ void *fungsi2() {
 				mine[i] = mine[i]-1;
 				if(mine[i]>=16) {
 					getchar();getchar();
-					continue;
+					goto psmine2;
 				}
 			}
 			for(i=0;i<x;i++) {
@@ -156,6 +156,7 @@ void *fungsi2() {
 			}
 			step=2;
 			turn=1;
+			continue;
 		}
 		if (step==2) {
 			guess2:
