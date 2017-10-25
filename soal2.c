@@ -28,7 +28,7 @@ void *fungsi1() {
 			continue;
 		}
 		if(step==1) {
-			printf("%s -> Jumlah pasang ranjau : ",nama1);
+			printf("%s -> Jumlah pasang ranjau [1-4]: ",nama1);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
@@ -124,7 +124,7 @@ void *fungsi2() {
 			continue;
 		}
 		if(step==1) {
-			printf("%s -> Jumlah pasang ranjau : ",nama2);
+			printf("%s -> Jumlah pasang ranjau [1-4]: ",nama2);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
