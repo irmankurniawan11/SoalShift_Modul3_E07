@@ -8,14 +8,14 @@
 void* faktorial(void *arg){	
 	int angka = (int) arg;
 	int total=1;
-	int count=1;
+	//int count=1;
 	//printf("%d hehe\n",total);
-	printf("1! =1\n");
+	//printf("1! =1\n");
 	for(int x=2;x<=angka;x++){
 	
-	count++;
+	//count++;
 	total=x*total;
-	printf("%d! =%d\n",count,total);
+	printf("%d! =%d\n",angka,total);
 	//printf("asasdasd\n");
 	}
 	//printf("%d! = %d",angka,total);
