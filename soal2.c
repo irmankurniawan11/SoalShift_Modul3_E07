@@ -24,6 +24,7 @@ void *fungsi1() {
 			continue;
 		}
 		if(step==1) {
+			printf("P1 -> Jumlah pasang ranjau : ");
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
@@ -79,9 +80,37 @@ void *fungsi2() {
 			continue;
 		}
 		if(step==1) {
+			printf("P2 -> Jumlah pasang ranjau : ");
 			scanf("%d",&x);
+			if(x>4) {
+				getchar();getchar();
+				continue;
+			}
+			psmine2:
+			printf("Lubang yang ingin dipasangi ranjau [1-16] :\n");
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
+				mine[i] = mine[i]-1;
+				if(mine[i]>=16) {
+					getchar();getchar();
+					continue;
+				}
+			}
+			for(i=0;i<x;i++) {
+				for(j=0;j<x;j++) {
+					if(i==j) continue;
+					if(mine[i]==mine[j]) {
+						getchar();getchar();
+						goto psmine2;
+					}
+				}
+			}
+			for(i=0;i<x;i++) {
+				if(mine2[mine[i]] != 1) mine2[mine[i]] = 1;
+				else {
+					getchar();getchar();
+					goto psmine2;
+				}	
 			}
 			step=2;
 			turn=1;
