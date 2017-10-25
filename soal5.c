@@ -2,6 +2,8 @@
 #include<pthread.h>
 #include<string.h>
 #include<unistd.h>
+#include<sys/wait.h>
+#include<stdlib.h>
 
 pthread_t tid1;
 pthread_t tid2;
@@ -24,10 +26,10 @@ printf("%s : %d\n",nama,flag);
 
 
 
-int main(int temp,char *argv[]){
+int main(int isi,char *argv[]){
 pthread_t tid[isi];
 for(int x=1;x<isi;x++){
-pthread_create(&(tid[x],NULL,&cari,(void *) argv[x]);
+pthread_create(&(tid[x]),NULL,&cari,(void *) argv[x]);
 }
 
 for(int x=1;x<isi;x++){
