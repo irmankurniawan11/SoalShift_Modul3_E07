@@ -9,10 +9,11 @@ pthread_t tid1;
 pthread_t tid2;
 FILE *novel; 
 void* cari(void *arg){
+FILE *novel;
 char nama[20];
 char text[200];
 int flag=0;
-novel=fopen("novel.txt","r");
+novel=fopen("Novel.txt","r");
 strcpy(nama,arg);
 while(fscanf(novel,"%s",text)!=EOF){
 if(strstr(text,nama)!=NULL){
