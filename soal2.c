@@ -49,6 +49,7 @@ void *fungsi1() {
 				for(j=0;j<x;j++) {
 					if(i==j) continue;
 					if(mine[i]==mine[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto psmine1;
 					}
@@ -80,6 +81,7 @@ void *fungsi1() {
 				for(j=0;j<4;j++) {
 					if(i==j) continue;
 					if(gues[i]==gues[j]) {
+						printf("input error, ulangi\n");
 						getchar();getchar();
 						goto guess1;
 					}
@@ -142,6 +144,7 @@ void *fungsi2() {
 				for(j=0;j<x;j++) {
 					if(i==j) continue;
 					if(mine[i]==mine[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto psmine2;
 					}
@@ -173,6 +176,7 @@ void *fungsi2() {
 				for(j=0;j<4;j++) {
 					if(i==j) continue;
 					if(gues[i]==gues[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto guess2;
 					}
