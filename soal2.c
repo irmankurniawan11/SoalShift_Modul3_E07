@@ -191,6 +191,11 @@ void *fungsi2() {
 			if(skor2>=10) {
 				winner=2;break;
 			}
+			printf("### UPDATE SKOR ###\n");
+			printf("P1 : %d\n", skor1);
+			printf("P2 : %d\n", skor2);
+			printf("Press any key to continue...");
+			getchar();getchar();
 			step=1;
 			turn=1;
 			continue;
