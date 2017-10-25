@@ -28,7 +28,7 @@ void *fungsi1() {
 			continue;
 		}
 		if(step==1) {
-			printf("%s -> Jumlah pasang ranjau : ",nama1);
+			printf("%s -> Jumlah pasang ranjau [1-4]: ",nama1);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
@@ -37,6 +37,7 @@ void *fungsi1() {
 			psmine1:
 			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama1);
 			for(i=0;i<x;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i] - 1;
 				
@@ -49,6 +50,7 @@ void *fungsi1() {
 				for(j=0;j<x;j++) {
 					if(i==j) continue;
 					if(mine[i]==mine[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto psmine1;
 					}
@@ -69,6 +71,7 @@ void *fungsi1() {
 			guess1:
 			printf("%s -> Tebak ranjau 4 lubang :\n", nama1);
 			for(i=0;i<4;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
 				if(gues[i]>=16) {
@@ -80,6 +83,7 @@ void *fungsi1() {
 				for(j=0;j<4;j++) {
 					if(i==j) continue;
 					if(gues[i]==gues[j]) {
+						printf("input error, ulangi\n");
 						getchar();getchar();
 						goto guess1;
 					}
@@ -122,7 +126,7 @@ void *fungsi2() {
 			continue;
 		}
 		if(step==1) {
-			printf("%s -> Jumlah pasang ranjau : ",nama2);
+			printf("%s -> Jumlah pasang ranjau [1-4]: ",nama2);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
@@ -131,6 +135,7 @@ void *fungsi2() {
 			psmine2:
 			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama2);
 			for(i=0;i<x;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i]-1;
 				if(mine[i]>=16) {
@@ -142,6 +147,7 @@ void *fungsi2() {
 				for(j=0;j<x;j++) {
 					if(i==j) continue;
 					if(mine[i]==mine[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto psmine2;
 					}
@@ -162,6 +168,7 @@ void *fungsi2() {
 			guess2:
 			printf("%s -> Tebak ranjau 4 lubang :\n",nama2);
 			for(i=0;i<4;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
 				if(gues[i]>=16) {
@@ -173,6 +180,7 @@ void *fungsi2() {
 				for(j=0;j<4;j++) {
 					if(i==j) continue;
 					if(gues[i]==gues[j]) {
+						printf("input error,ulangi\n");
 						getchar();getchar();
 						goto guess2;
 					}
@@ -209,13 +217,13 @@ int main() {
 	
 	while(1) {
 		if(winner==1) {
-			printf("P1 Menang\n");
-			printf("Skornya %d\n",skor1);
+			printf("%s menang dengan skor %d !\n",nama1,skor1);
+			printf("Skor %s cuma %d :(\n",nama2,skor2);
 			return 0;
 		}
 		if(winner==2) {
-			printf("P2 Menang\n");
-			printf("Skornya %d\n",skor2);
+			printf("%s menang dengan skor %d !\n",nama2,skor2);
+			printf("Skor %s cuma %d :(\n",nama2,skor2);
 			return 0;
 		}
 	}
