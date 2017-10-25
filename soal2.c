@@ -26,17 +26,17 @@ void *fungsi1() {
 		if(step==1) {
 			scanf("%d",&x);
 			if(x>4) {
-				getchar();
+				getchar();getchar();
 				continue;
 			}
 			psmine1:
-			printf("Lubang yang ingin dipasangi ranjau (1-16) :\n");
+			printf("Lubang yang ingin dipasangi ranjau [1-16] :\n");
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
-				mine[i] -= 1;
+				mine[i] = mine[i] - 1;
 				
-				if(mine[i]>16) {
-					getchar();
+				if(mine[i]>=16) {
+					getchar();getchar();
 					goto psmine1;
 				}
 			}
@@ -44,13 +44,17 @@ void *fungsi1() {
 				for(j=0;j<x;j++) {
 					if(i==j) continue;
 					if(mine[i]==mine[j]) {
-						getchar();
+						getchar();getchar();
 						goto psmine1;
 					}
 				}
 			}
 			for(i=0;i<x;i++) {
 				if(mine1[mine[i]] != 1) mine1[mine[i]] = 1;
+				else {
+					getchar();getchar();
+					goto psmine1;
+				}	
 			}
 			step=2;
 			turn=2;
