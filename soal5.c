@@ -15,7 +15,7 @@ char text[200];
 int flag=0;
 novel=fopen("Novel.txt","r");
 strcpy(nama,arg);
-while(fscanf(novel,"%s",text)!=EOF){
+while(fscanf(Novel,"%s",text)!=EOF){
 if(strstr(text,nama)!=NULL){
 flag++;
 }
