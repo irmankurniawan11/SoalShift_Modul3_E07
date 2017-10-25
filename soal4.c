@@ -17,8 +17,8 @@ pthread_t tid[argc];
 int angka;
 for(int x=1;x<argc;x++){
 	
-	angka=atoi(argv[i]);
-	pthread_create(&(tid[i],NULL,&faktorial,(void*)angka);
-	pthread_join(tid[i],NULL);
+	angka=atoi(argv[x]);
+	pthread_create(&(tid[x],NULL,&faktorial,(void*)angka));
+	pthread_join(tid[x],NULL);
 }
 
