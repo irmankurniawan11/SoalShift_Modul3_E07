@@ -95,7 +95,7 @@ void *fungsi1() {
 			if(skor1>=10) {
 				winner=1;break;
 			}
-			if(sko2>=10) {
+			if(skor2>=10) {
 				winner=2;break;
 			}
 			//
@@ -171,7 +171,7 @@ void *fungsi2() {
 					if(i==j) continue;
 					if(gues[i]==gues[j]) {
 						getchar();getchar();
-						goto guess1;
+						goto guess2;
 					}
 				}
 			}
@@ -185,7 +185,7 @@ void *fungsi2() {
 			if(skor1>=10) {
 				winner=1;break;
 			}
-			if(sko2>=10) {
+			if(skor2>=10) {
 				winner=2;break;
 			}
 			//
