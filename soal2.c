@@ -82,6 +82,19 @@ void *fungsi1() {
 					}
 				}
 			}
+			for(i=0;i<4;i++) {
+				if(mine2[gues[i]]==1) {
+					skor2 += 1;
+				} else {
+					skor1 += 1;
+				}
+			}
+			if(skor1>=10) {
+				winner=1;break;
+			}
+			if(sko2>=10) {
+				winner=2;break;
+			}
 			//
 		}
 	}
