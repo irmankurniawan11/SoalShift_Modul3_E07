@@ -14,7 +14,7 @@ novel=fopen("novel.txt","r");
 strcpy(nama,arg);
 while(fscanf(novel,"%s",text)!=EOF){
 if(strstr(text,nama)!=NULL){
-
+flag++;
 }
 }
 
@@ -26,11 +26,11 @@ printf("%s : %d\n",nama,flag);
 
 int main(int temp,char *argv[]){
 pthread_t tid[isi];
-for(int x=1;x<;x++){
+for(int x=1;x<isi;x++){
 pthread_create(&(tid[x],NULL,&cari,(void *) argv[x]);
 }
 
-for(int x=1;x<;x++){
+for(int x=1;x<isi;x++){
 pthread_join(tid[x],NULL);
 }
 
