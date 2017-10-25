@@ -13,7 +13,7 @@ FILE *novel;
 char nama[20];
 char text[200];
 int flag=0;
-novel=fopen("Novel.txt","r");
+novel=fopen("novel.txt","r");
 strcpy(nama,arg);
 while(fscanf(Novel,"%s",text)!=EOF){
 if(strstr(text,nama)!=NULL){
