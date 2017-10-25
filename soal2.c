@@ -65,7 +65,7 @@ void *fungsi1() {
 }
 
 void *fungsi2() {
-	int i;
+	int i,j;
 	int step=0;
 	int x;int mine[4];
 	
