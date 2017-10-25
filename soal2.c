@@ -8,6 +8,9 @@ int mine1[16], mine2[16];
 int nama1[50], nama2[50];
 int turn=1;
 
+int skor1=0, skor2=0;
+int winner=0;
+
 void *fungsi1() {
 	int i,j;
 	int step=0;
