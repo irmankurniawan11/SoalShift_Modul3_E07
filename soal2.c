@@ -37,6 +37,7 @@ void *fungsi1() {
 			psmine1:
 			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama1);
 			for(i=0;i<x;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i] - 1;
 				
@@ -70,6 +71,7 @@ void *fungsi1() {
 			guess1:
 			printf("%s -> Tebak ranjau 4 lubang :\n", nama1);
 			for(i=0;i<4;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
 				if(gues[i]>=16) {
@@ -133,6 +135,7 @@ void *fungsi2() {
 			psmine2:
 			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama2);
 			for(i=0;i<x;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i]-1;
 				if(mine[i]>=16) {
@@ -165,6 +168,7 @@ void *fungsi2() {
 			guess2:
 			printf("%s -> Tebak ranjau 4 lubang :\n",nama2);
 			for(i=0;i<4;i++) {
+				printf("%d. Lubang ke ",i+1);
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
 				if(gues[i]>=16) {
