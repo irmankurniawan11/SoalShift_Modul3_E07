@@ -209,13 +209,11 @@ int main() {
 	
 	while(1) {
 		if(winner==1) {
-			printf("P1 Menang\n");
-			printf("Skornya %d\n",skor1);
+			printf("%s menang dengan skor %d !\n",nama1,skor2);
 			return 0;
 		}
 		if(winner==2) {
-			printf("P2 Menang\n");
-			printf("Skornya %d\n",skor2);
+			printf("%s menang dengan skor %d !\n",nama2,skor2);
 			return 0;
 		}
 	}
