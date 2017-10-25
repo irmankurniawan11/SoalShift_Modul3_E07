@@ -5,13 +5,13 @@
 #include <string.h>
 #include <sys/wait.h>
 
-char senjata[6][6]={"MPM4A1","PM2-V1","SPR-3","SS2-V5","SPG1-V3","MINE"};
-int stock[6]={"0","1","2","3","4","5"};
+char senjata[10][10]={"MPM4A1","PM2-V1","SPR-3","SS2-V5","SPG1-V3","MINE"};
 
 int main(){
 
 	key_t keyp= 1234;
-	int shmid = shmget(keyp,sizeof(int), IPC_CREAT | 0666)
+	int shmid = shmget(keyp,sizeof(int)*6, IPC_CREAT | 0666);
+	int *stock=shmat(shmid,NULL,0);	
 	int choice;
 	int jumlah;
 	char nama[10];
@@ -23,20 +23,23 @@ int main(){
 			}
 		}
 	else if (choice==2){
-	scanf("%s %d",&nama,&jumlah);
+	scanf("%s %d",nama,&jumlah);
 		for(int x=0;x<6;x++){
 			if(!strcmp(senjata[x],nama)){
-				if(stock[x]<,jumlah){
-					printf("Stock tidak cukup, stock sekarang ada %d\n",stock[x]};
+				if(stock[x]<jumlah){
+					printf("Stock tidak cukup, stock sekarang ada %d\n",stock[x]);
 					}
 				else{
 					stock[x]=stock[x]-jumlah;
 					printf("Berhasil membeli %d , stock sekarang %d\n",jumlah,stock[x]);
 					}
-				break;
-			if(x==5){
-			printf("Nama senjata tidak dikenal\n");
-			}
-		}
+				break;}
+			//if(x==5){
+			//printf("Nama senjata tidak dikenal\n");
+			//}
+		}}}
+	shmdt(stock);
+	shmctl(shmid, IPC_RMID, NULL);
 
 }
+
