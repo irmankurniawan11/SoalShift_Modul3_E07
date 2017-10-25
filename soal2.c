@@ -12,6 +12,7 @@ void *fungsi1() {
 	int i,j;
 	int step=0;
 	int x;int mine[4];
+	int gues[4];
 	
 	for(i=0; i<16;i++) mine1[i]=0;
 	while(1) {
@@ -60,6 +61,28 @@ void *fungsi1() {
 			step=2;
 			turn=2;
 			continue;
+		}
+		if (step==2) {
+			guess1:
+			printf("Tebak ranjau 4 lubang :\n");
+			for(i=0;i<4;i++) {
+				scanf("%d",&gues[i]);
+				gues[i] = gues[i] - 1;
+				if(gues[i]>=16) {
+					getchar();getchar();
+					goto guess1;
+				}
+			}
+			for(i=0;i<4;i++) {
+				for(j=0;j<4;j++) {
+					if(i==j) continue;
+					if(gues[i]==gues[j]) {
+						getchar();getchar();
+						goto guess1;
+					}
+				}
+			}
+			//
 		}
 	}
 }
