@@ -20,14 +20,27 @@ void *fungsi1() {
 			scanf("%s",nama1);
 			step=1;
 			turn=2;
+			continue;
 		}
 		if(step==1) {
 			scanf("%d",&x);
+			psmine1:
+			printf("Lubang yang ingin dipasangi ranjau (1-16) :\n");
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
+				mine[i] -= 1;
+			}
+			for(i=0;i<x;i++) {
+				for(j=0;j<x;j++) {
+					if(a==f) continue;
+				}
+			}
+			for(i=0;i<x;i++) {
+				if(mine1[mine[i]] != 1) mine1[mine[i]] = 1;
 			}
 			step=2;
 			turn=2;
+			continue;
 		}
 	}
 }
