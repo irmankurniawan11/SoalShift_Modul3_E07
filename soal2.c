@@ -28,14 +28,14 @@ void *fungsi1() {
 			continue;
 		}
 		if(step==1) {
-			printf("P1 -> Jumlah pasang ranjau : ");
+			printf("%s -> Jumlah pasang ranjau : ",nama1);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
 				continue;
 			}
 			psmine1:
-			printf("Lubang yang ingin dipasangi ranjau [1-16] :\n");
+			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama1);
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i] - 1;
@@ -67,7 +67,7 @@ void *fungsi1() {
 		}
 		if (step==2) {
 			guess1:
-			printf("Tebak ranjau 4 lubang :\n");
+			printf("%s -> Tebak ranjau 4 lubang :\n", nama1);
 			for(i=0;i<4;i++) {
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
@@ -111,7 +111,7 @@ void *fungsi2() {
 	int x;int mine[4];
 	int gues[4];
 	
-	for(i=0; i<16;i++) mine1[i]=0;
+	for(i=0; i<16;i++) mine2[i]=0;
 	while(1) {
 		while(turn!=2) {}
 		if(step==0) {
@@ -122,20 +122,20 @@ void *fungsi2() {
 			continue;
 		}
 		if(step==1) {
-			printf("P2 -> Jumlah pasang ranjau : ");
+			printf("%s -> Jumlah pasang ranjau : ",nama2);
 			scanf("%d",&x);
 			if(x>4) {
 				getchar();getchar();
 				continue;
 			}
 			psmine2:
-			printf("Lubang yang ingin dipasangi ranjau [1-16] :\n");
+			printf("%s -> Lubang yang ingin dipasangi ranjau [1-16] :\n",nama2);
 			for(i=0;i<x;i++) {
 				scanf("%d",&mine[i]);
 				mine[i] = mine[i]-1;
 				if(mine[i]>=16) {
 					getchar();getchar();
-					continue;
+					goto psmine2;
 				}
 			}
 			for(i=0;i<x;i++) {
@@ -156,10 +156,11 @@ void *fungsi2() {
 			}
 			step=2;
 			turn=1;
+			continue;
 		}
 		if (step==2) {
 			guess2:
-			printf("Tebak ranjau 4 lubang :\n");
+			printf("%s -> Tebak ranjau 4 lubang :\n",nama2);
 			for(i=0;i<4;i++) {
 				scanf("%d",&gues[i]);
 				gues[i] = gues[i] - 1;
@@ -190,6 +191,11 @@ void *fungsi2() {
 			if(skor2>=10) {
 				winner=2;break;
 			}
+			printf("### UPDATE SKOR ###\n");
+			printf("%s : %d\n", nama1,skor1);
+			printf("%s : %d\n", nama2,skor2);
+			printf("Press any key to continue...");
+			getchar();getchar();
 			step=1;
 			turn=1;
 			continue;
