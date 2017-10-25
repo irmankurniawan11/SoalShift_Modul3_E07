@@ -3,17 +3,22 @@
 #include<stdlib.h>
 #include<pthread.h>
 
-void* faktorial(int angka){
+void* faktorial(void *arg){
+	int angka=(int*)arg;
 	int total=angka;
 	for(int x=angka;x>1;x--){
 	total=angka*total;
 	}
+	printf("%d! = %d",angka,total);
 }
 
 int main(int argc,char *argv[]){
 pthread_t tid[argc];
+int angka;
 for(int x=1;x<argc;x++){
-	pthread_create(&(tid[i],NULL,&faktorial,(void*)bil);
+	
+	angka=atoi(argv[i]);
+	pthread_create(&(tid[i],NULL,&faktorial,(void*)angka);
 	pthread_join(tid[i],NULL);
 }
 
